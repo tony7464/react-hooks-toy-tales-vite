@@ -6,8 +6,6 @@ Toy Tales is a React toy collection app. Users can view Andy's toys, add a new t
 
 ![Toy Tales completed app](./images/toy-tales-screenshot.png)
 
-*Drop your screenshot at `images/toy-tales-screenshot.png` so this image renders on GitHub.*
-
 ## Features
 
 - **See all toys** on page load (`GET /toys`)
