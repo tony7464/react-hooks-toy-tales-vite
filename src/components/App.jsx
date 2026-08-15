@@ -27,6 +27,11 @@ function App() {
     setToys((currentToys) => [...currentToys, newToy]);
   }
 
+  // After a successful DELETE, remove that toy from state so it leaves the page.
+  function handleDonateToy(id) {
+    setToys((currentToys) => currentToys.filter((toy) => toy.id !== id));
+  }
+
   return (
     <>
       <Header />
@@ -34,7 +39,7 @@ function App() {
       <div className="buttonContainer">
         <button onClick={handleClick}>Add a Toy</button>
       </div>
-      <ToyContainer toys={toys} />
+      <ToyContainer toys={toys} onDonateToy={handleDonateToy} />
     </>
   );
 }
