@@ -16,6 +16,7 @@ function ToyForm({ onAddToy }) {
     }));
   }
 
+  // POST a new toy with 0 likes, then pass the created toy up to App.
   function handleSubmit(event) {
     event.preventDefault();
 

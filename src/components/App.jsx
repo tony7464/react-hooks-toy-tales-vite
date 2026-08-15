@@ -32,6 +32,13 @@ function App() {
     setToys((currentToys) => currentToys.filter((toy) => toy.id !== id));
   }
 
+  // After a successful PATCH, replace that toy in place so the list order stays the same.
+  function handleUpdateToy(updatedToy) {
+    setToys((currentToys) =>
+      currentToys.map((toy) => (toy.id === updatedToy.id ? updatedToy : toy))
+    );
+  }
+
   return (
     <>
       <Header />
@@ -39,7 +46,11 @@ function App() {
       <div className="buttonContainer">
         <button onClick={handleClick}>Add a Toy</button>
       </div>
-      <ToyContainer toys={toys} onDonateToy={handleDonateToy} />
+      <ToyContainer
+        toys={toys}
+        onDonateToy={handleDonateToy}
+        onUpdateToy={handleUpdateToy}
+      />
     </>
   );
 }
