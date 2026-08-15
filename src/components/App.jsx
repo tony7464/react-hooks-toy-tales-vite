@@ -22,10 +22,15 @@ function App() {
     setShowForm((showForm) => !showForm);
   }
 
+  // After a successful POST, add the new toy to state so it shows up immediately.
+  function handleAddToy(newToy) {
+    setToys((currentToys) => [...currentToys, newToy]);
+  }
+
   return (
     <>
       <Header />
-      {showForm ? <ToyForm /> : null}
+      {showForm ? <ToyForm onAddToy={handleAddToy} /> : null}
       <div className="buttonContainer">
         <button onClick={handleClick}>Add a Toy</button>
       </div>
